@@ -12,6 +12,7 @@ pytest-cov = "*"
 pytest-pythonpath = "*"
 coverage = "*"
 watchdog = "*"
+nuitka = "*"
 
 [packages]
 pluggy = "*"

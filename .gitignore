@@ -64,3 +64,8 @@ Pipfile.lock
 
 # sandbox files
 *sandbox*
+
+/awsumepy
+/bin_entrypoint.build
+/bin_entrypoint.dist
+/bin_entrypoint.onefile-build
