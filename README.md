@@ -3,6 +3,8 @@
 Compiled down to a single binary by Nuitka to make installation simpler, does not rely on a flaky python
 installation.
 
+See scripts: `build_bin.sh` and `create_symlinks_example.sh` and see PR for diff against unstream; changes are minimal.
+
 ## Installation
 
 - Put `awsume` shell script on path.
