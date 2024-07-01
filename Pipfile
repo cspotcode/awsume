@@ -12,6 +12,7 @@ pytest-cov = "*"
 pytest-pythonpath = "*"
 coverage = "*"
 watchdog = "*"
+nuitka = "*"
 
 [packages]
 pluggy = "*"
@@ -23,6 +24,7 @@ coverage = "*"
 pyyaml = "*"
 xmltodict = "*"
 argcomplete = "*"
+setuptools = "*"
 
 [scripts]
 test = "pytest test --cov=awsume --cov-report term"

@@ -6,15 +6,17 @@ PYENV_ALIAS = r'alias awsume="source \$(pyenv which awsume)"'
 PYENV_FISH_ALIAS = r'alias awsume="source (pyenv which awsume.fish)"'
 FISH_ALIAS = r'alias awsume="source (which awsume.fish)"'
 
+which_pyenv = False
+
 def main(shell: str, alias_file: str):
     alias_file = str(pathlib.Path(alias_file).expanduser())
     if shell == 'fish':
-        if which('pyenv'):
+        if which_pyenv:
             alias = PYENV_FISH_ALIAS
         else:
             alias = FISH_ALIAS
     else:
-        if which('pyenv'):
+        if which_pyenv:
             alias = PYENV_ALIAS
         else:
             alias = DEFAULT_ALIAS
