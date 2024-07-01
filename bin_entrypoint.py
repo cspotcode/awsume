@@ -1,9 +1,8 @@
 from posixpath import basename
-from sys import argv
 import sys
-import awsume.configure.main
-import awsume.awsumepy.main
-import awsume.autoawsume.main
+from awsume.configure import main as configure_main
+from awsume.awsumepy import main as awsume_py_main
+from awsume.autoawsume import main as autoawsume_main
 import awsume_autocomplete.awsume_autocomplete
 
 def main():
@@ -18,13 +17,18 @@ def main():
     # 'autoawsume=awsume.autoawsume.main:main',
     # 'awsume-configure=awsume.configure.main:main',
     # 'awsume-autocomplete=awsume_autocomplete:main',
-    bin = basename(argv[1])
-    if bin == 'awsume-configure':
-        awsume.configure.main.main()
-    elif bin == 'awsumepy':
-        awsume.awsumepy.main.main()
+    
+    bin = basename(sys.argv[0])
+    # bin = basename(sys.argv[1]) if len(sys.argv) > 1 else ""
+    # print(sys.argv)
+    # bin = "autoawsume"
+
+    if bin == 'awsumepy':
+        awsume_py_main.main()
+    elif bin == 'awsume-configure':
+        configure_main.main()
     elif bin == 'autoawsume':
-        awsume.autoawsume.main.main()
+        autoawsume_main.main()
     elif bin == 'awsume-autocomplete':
         awsume_autocomplete.awsume_autocomplete.main()
     else:

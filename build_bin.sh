@@ -2,15 +2,18 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-# Ensure venv
-python -m venv .venv
-source .venv/bin/activate
+# echo 'This script has become a guide, not an executable script, cuz it needs to'
+# echo 'happen inside pipenv shell and I havent updated it for that'
+# # exit 1
 
-# Install deps
+# Install deps and create virtualenv
 pipenv install --dev
 
+# To do things in the pipenv, get a shell:
+# pipenv shell
+
 # Build binary
-nuitka3 \
+pipenv run nuitka3 \
     --standalone --onefile \
     --output-filename=awsumepy \
     ./bin_entrypoint.py
